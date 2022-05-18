@@ -1,7 +1,7 @@
 VERSION         := 0.0.1
 
-PACK            := xyz
-PROJECT         := github.com/pulumi/pulumi-${PACK}
+PACK            := aws-vpc
+PROJECT         := github.com/zchase/pulumi-${PACK}
 
 PROVIDER        := pulumi-resource-${PACK}
 CODEGEN         := pulumi-gen-${PACK}
@@ -72,7 +72,6 @@ build_nodejs_sdk:: gen_nodejs_sdk
 		rm ./bin/package.json.bak
 
 install_nodejs_sdk:: build_nodejs_sdk
-	yarn unlink ${PACK}
 	yarn link --cwd ${WORKING_DIR}/sdk/nodejs/bin
 
 

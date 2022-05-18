@@ -5,7 +5,7 @@ before:
   hooks:
     - make build_provider
 builds:
-  - binary: pulumi-resource-xyz
+  - binary: pulumi-resource-aws-vpc
     dir: provider
     env:
       - CGO_ENABLED=0
@@ -18,8 +18,8 @@ builds:
       - linux
     ldflags:
       # The line below MUST align with the module in current provider/go.mod
-      - -X github.com/your-org-name/pulumi-xyz/provider/pkg/version.Version={{.Tag }}
-    main: ./cmd/pulumi-resource-xyz/
+      - -X github.com/zchase/pulumi-aws-vpc/provider/pkg/version.Version={{.Tag }}
+    main: ./cmd/pulumi-resource-aws-vpc/
 changelog:
   skip: true
 release:
